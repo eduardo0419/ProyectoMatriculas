@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/ir_principal" android:icon="@android:drawable/ic_menu_send"
+            android:title="Principal" />
+        <item android:id="@+id/ir_matricula" android:icon="@android:drawable/ic_menu_manage"
+            android:title="Matricular"/>
+        <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_preferences"
+            android:title="Listar" />
+        <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Reportes" />
+    </group>
+
+    <item android:title="Comunicacion">
+        <menu>
+            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
+                android:title="Mensajes" />
+            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
+                android:title="Ayuda" />
+        </menu>
+    </item>
+
+</menu>

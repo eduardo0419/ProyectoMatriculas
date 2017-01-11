@@ -8,4 +8,5 @@
     <color name="blanco">#FFFFFF</color>
     <color name="celeste">#03A9F4</color>
     <color name="negro">#000</color>
+    <color name="info">#CFCFCF</color>
 </resources>
