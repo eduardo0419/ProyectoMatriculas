@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.edudev.proyectomatriculas.MatriculaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.83">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="443dp"
+            android:id="@+id/relative">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Listado de Cursos"
+                android:id="@+id/textView3"
+                android:textStyle="bold"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semestre: 2016-I"
+                android:id="@+id/txt_semestre"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:layout_alignTop="@+id/txt_ciclo"
+                android:layout_alignRight="@+id/btn_matricula"
+                android:layout_alignEnd="@+id/btn_matricula"
+                android:layout_marginRight="43dp"
+                android:layout_marginEnd="43dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ciclo: I"
+                android:id="@+id/txt_ciclo"
+                android:layout_marginTop="32dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/scrollView_productos"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                android:layout_gravity="bottom"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txt_semestre"
+                android:layout_above="@+id/btn_matricula">
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btn_matricula"
+                android:layout_width="349dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Matricular"
+                android:theme="@style/EstiloBoton"
+                android:layout_gravity="right"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.edudev.proyectomatriculas;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -31,7 +32,7 @@ public class MenuActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content,new FragmenPrincipal()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content,new PrincipalFragment()).commit();
     }
 
     @Override
@@ -49,8 +50,26 @@ public class MenuActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
+        fragmentManager=getSupportFragmentManager();
+        if (id == R.id.ir_principal) {
+            fragment=new PrincipalFragment();
+        } else if (id == R.id.ir_matricula) {
+            fragment=new MatriculaFragment();
+        } else if (id == R.id.ir_listar) {
 
+        } else if (id == R.id.ir_repostes) {
 
+        } else if (id == R.id.ir_mensajes) {
+
+        } else if (id == R.id.id_ayuda) {
+
+        }
+        if (fragment != null) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content,fragment)
+                    .commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
