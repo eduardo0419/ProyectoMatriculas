@@ -11,14 +11,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.edudev.proyectomatriculas.ui.fragment.MatriculaFragment;
+import com.edudev.proyectomatriculas.ui.fragment.PrincipalFragment;
+
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,6 +37,7 @@ public class MenuActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
 
         fragmentManager=getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content,new PrincipalFragment()).commit();
@@ -60,9 +68,9 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.ir_repostes) {
 
-        } else if (id == R.id.ir_mensajes) {
+        } else if (id == R.id.ir_ayuda) {
 
-        } else if (id == R.id.id_ayuda) {
+        } else if (id == R.id.ir_salir) {
 
         }
         if (fragment != null) {
