@@ -22,7 +22,7 @@ public class MatriculaApiAdapter {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
-                    //.client(httpClient.build()) // <-- using the log level
+                    .client(httpClient.build()) // <-- using the log level
                     .build();
             API_SERVICE = retrofit.create(MatriculaApiService.class);
         }

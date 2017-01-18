@@ -89,7 +89,6 @@ public class PrincipalFragment extends Fragment implements View.OnClickListener,
             DNI.setText(sessionResponse.getDni());
             Celular.setText(sessionResponse.getCelular());
             Matri.setText(Global.getUsuarioFromShared(getActivity(),"id_usuario"));
-            Toast.makeText(getContext(),"Email y/o contraseña incorrecta",Toast.LENGTH_LONG).show();
         }
     }
 

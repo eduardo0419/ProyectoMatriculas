@@ -3,6 +3,7 @@ package com.edudev.proyectomatriculas.io;
 
 import com.edudev.proyectomatriculas.io.response.ActualizaResponse;
 import com.edudev.proyectomatriculas.io.response.DatosResponse;
+import com.edudev.proyectomatriculas.io.response.ListarResponse;
 import com.edudev.proyectomatriculas.io.response.SessionResponse;
 
 import retrofit2.Call;
@@ -19,4 +20,7 @@ public interface MatriculaApiService {
 
     @GET("actualiza_datos.php")
     Call<ActualizaResponse> setDatos(@Query("matricula") String matricula,@Query("dni") String dni,@Query("celular") String celular);
+
+    @GET("listarCursos.php")
+    Call<ListarResponse> getCursos();
 }
