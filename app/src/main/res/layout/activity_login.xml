@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context="com.edudev.proyectomatriculas.LoginActivity">
+    tools:context="com.edudev.proyectomatriculas.ui.activity.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -25,13 +25,14 @@
         android:layout_marginTop="20dp"
         android:textColorHint="@color/blanco"
         android:layout_height="wrap_content">
+
         <EditText
+            android:id="@+id/txt_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="USUARIO"
             android:inputType="number"
-            android:id="@+id/txt_usuario"
-            android:textColor="@color/blanco"
-            android:hint="USUARIO" />
+            android:textColor="@color/blanco" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout

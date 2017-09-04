@@ -3,16 +3,14 @@
     android:layout_width="wrap_content"
     android:layout_height="50dp"
     android:gravity="center" xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#7B1FA2"
+    android:background="#fff"
     android:weightSum="1">
     <EditText
         android:id="@+id/input_codigo"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textColor="@color/negro"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="3dp"
-        android:background="#fff"
+        android:background="@drawable/edittext"
         android:layout_weight="0.29"
         android:gravity="center"
         android:editable="false"/>
@@ -21,28 +19,47 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textColor="@color/negro"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="3dp"
-        android:background="#fff"
+        android:background="@drawable/edittext"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
+        android:id="@+id/input_tipocurso"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textColor="@color/negro"
+        android:background="@drawable/edittext"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
+        android:id="@+id/input_ciclo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textColor="@color/negro"
+        android:background="@drawable/edittext"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
+        android:id="@+id/input_seccion"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textColor="@color/negro"
+        android:background="@drawable/edittext"
         android:gravity="center"
         android:editable="false"/>
     <EditText
         android:id="@+id/input_credito"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="3dp"
         android:textColor="@color/negro"
-        android:background="#fff"
+        android:background="@drawable/edittext"
         android:gravity="center"
         android:editable="false"/>
     <EditText
-        android:layout_marginLeft="2dp"
-        android:id="@+id/input_ciclo"
+        android:id="@+id/input_vez"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="3dp"
         android:textColor="@color/negro"
-        android:background="#fff"
+        android:background="@drawable/edittext"
         android:gravity="center"
         android:editable="false"/>
 </TableRow>

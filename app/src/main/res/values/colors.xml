@@ -9,4 +9,7 @@
     <color name="celeste">#03A9F4</color>
     <color name="negro">#000</color>
     <color name="info">#CFCFCF</color>
+    <color name="verde">@android:color/holo_green_light</color>
+
+    <color name="trans">@android:color/transparent</color>
 </resources>

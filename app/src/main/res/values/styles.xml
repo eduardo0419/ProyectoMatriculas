@@ -19,6 +19,11 @@
         <item name="android:textColor">@color/blanco</item>
     </style>
 
+    <style name="Estilofila" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlHighlight">@color/blanco</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:textColor">@color/blanco</item>
+    </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

@@ -29,7 +29,41 @@
         android:gravity="center"
         android:editable="false"/>
     <EditText
+        android:id="@+id/textView5"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="2dp"
+        android:text="T.Curso"
+        android:textColor="@color/blanco"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#7B1FA2"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
+        android:id="@+id/textView6"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="2dp"
+        android:text="Ciclo"
+        android:textColor="@color/blanco"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#7B1FA2"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
         android:id="@+id/textView3"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="2dp"
+        android:text="Seccion"
+        android:textColor="@color/blanco"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#7B1FA2"
+        android:gravity="center"
+        android:editable="false"/>
+    <EditText
+        android:layout_marginRight="2dp"
+        android:id="@+id/textView4"
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:text="Creditos"
@@ -39,11 +73,11 @@
         android:gravity="center"
         android:editable="false"/>
     <EditText
-        android:layout_marginLeft="2dp"
-        android:id="@+id/textView4"
+        android:id="@+id/text"
+        android:layout_marginRight="2dp"
         android:layout_width="100dp"
         android:layout_height="48dp"
-        android:text="Ciclo"
+        android:text="Vez"
         android:textColor="@color/blanco"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:background="#7B1FA2"

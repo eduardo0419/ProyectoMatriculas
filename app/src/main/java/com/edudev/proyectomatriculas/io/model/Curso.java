@@ -1,42 +1,69 @@
 package com.edudev.proyectomatriculas.io.model;
 
-import java.util.ArrayList;
-
 /**
  * Created by pc on 18/01/2017.
  */
 
 public class Curso {
-    private String descripcion;
-    private String codigo;
-    private String credito;
+    private String cursodictar;
+    private String idcursoprog ;
+    private String codigocurso;
+    private String curso;
+    private String tipocurso;
+    private String seccion;
     private String ciclo;
-    private String tipo;
-    private ArrayList<Horario> arrayTeoria;
-    private ArrayList<Horario> arrayLab;
+    private String creditos;
+    private String vez;
+    String idperiodo;
+    private String abreviatura;
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getCursodictar() {
+        return cursodictar;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCursodictar(String cursodictar) {
+        this.cursodictar = cursodictar;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getidcursoprog() {
+        return idcursoprog;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setidcursoprog(String idcursoprog) {
+        this.idcursoprog = idcursoprog;
     }
 
-    public String getCredito() {
-        return credito;
+    public String getCodigocurso() {
+        return codigocurso;
     }
 
-    public void setCredito(String credito) {
-        this.credito = credito;
+    public void setCodigocurso(String codigocurso) {
+        this.codigocurso = codigocurso;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String getTipocurso() {
+        return tipocurso;
+    }
+
+    public void setTipocurso(String tipocurso) {
+        this.tipocurso = tipocurso;
+    }
+
+
+    public String getSeccion() {
+        return seccion;
+    }
+
+    public void setSeccion(String seccion) {
+        this.seccion = seccion;
     }
 
     public String getCiclo() {
@@ -47,27 +74,27 @@ public class Curso {
         this.ciclo = ciclo;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getCreditos() {
+        return creditos;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setCreditos(String creditos) {
+        this.creditos = creditos;
     }
 
-    public ArrayList<Horario> getArrayTeoria() {
-        return arrayTeoria;
+    public String getVez() {
+        return vez;
     }
 
-    public void setArrayTeoria(ArrayList<Horario> arrayTeoria) {
-        this.arrayTeoria = arrayTeoria;
+    public void setVez(String vez) {
+        this.vez = vez;
     }
 
-    public ArrayList<Horario> getArrayLab() {
-        return arrayLab;
+    public String getAbreviatura() {
+        return abreviatura;
     }
 
-    public void setArrayLab(ArrayList<Horario> arrayLab) {
-        this.arrayLab = arrayLab;
+    public void setAbreviatura(String abreviatura) {
+        this.abreviatura = abreviatura;
     }
 }

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "174642771630",
+    "firebase_url": "https://matriculassga.firebaseio.com",
+    "project_id": "matriculassga",
+    "storage_bucket": "matriculassga.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174642771630:android:b7f7983b9ea4e18b",
+        "android_client_info": {
+          "package_name": "com.edudev.proyectomatriculas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174642771630-qvvhclblbi21pcvp45h2qq6gqi4siure.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEmoYSdbdaX_qOwCKPVLvvFtcQwOVGbho"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

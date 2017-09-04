@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.edudev.proyectomatriculas.ui.fragment.AyudaFragment">
+
+
+    <TextView
+        android:text="AYUDA Y/O PREGUNTAS EN LINEA"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/titu"
+            android:hint="Titulo de la Incidencia" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/desrco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="Descripcion" />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ayuda"
+        android:layout_marginTop="20dp"
+        android:text="Solicitar Ayuda"
+        android:theme="@style/EstiloBoton"
+        android:textStyle="bold"/>
+</LinearLayout>

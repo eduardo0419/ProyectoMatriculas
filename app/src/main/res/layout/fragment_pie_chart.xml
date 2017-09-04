@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.edudev.proyectomatriculas.ui.fragment.PieChartFragment"
+    android:background="#3D394D">
+    <WebView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/content">
+    </WebView>
+
+</RelativeLayout>

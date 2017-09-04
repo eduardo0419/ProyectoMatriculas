@@ -1,26 +1,30 @@
 package com.edudev.proyectomatriculas.io.response;
 
 
+import com.edudev.proyectomatriculas.io.model.DataSesion;
+
+import java.util.ArrayList;
+
 public class SessionResponse {
 
 
-    private String id;
-    private boolean error;
+    private int suceso;
+    private ArrayList<DataSesion> data;
 
-    public boolean isError() {
-        return error;
+
+    public int getSuceso() {
+        return suceso;
     }
 
-    public void setError(boolean error) {
-        this.error = error;
+    public void setSuceso(int suceso) {
+        this.suceso = suceso;
     }
 
-    public void setId(String dni) {
-        this.id = dni;
+    public ArrayList<DataSesion> getData() {
+        return data;
     }
 
-    public String getId() {
-        return id;
+    public void setData(ArrayList<DataSesion> data) {
+        this.data = data;
     }
-
 }

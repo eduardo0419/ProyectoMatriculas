@@ -1,19 +1,28 @@
 package com.edudev.proyectomatriculas.io.response;
 
 import com.edudev.proyectomatriculas.io.model.Curso;
-import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
 public class ListarResponse {
-    @SerializedName("cursos")
-    private ArrayList<Curso> arrayList;
 
-    public ArrayList<Curso> getArrayList() {
-        return arrayList;
+    private String total;
+
+    private ArrayList<Curso> datos;
+
+    public ArrayList<Curso> getDatos() {
+        return datos;
     }
 
-    public void setArrayList(ArrayList<Curso> arrayList) {
-        this.arrayList = arrayList;
+    public void setDatos(ArrayList<Curso> datos) {
+        this.datos = datos;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 }
