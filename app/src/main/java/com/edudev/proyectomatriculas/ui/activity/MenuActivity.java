@@ -87,10 +87,10 @@ public class MenuActivity extends AppCompatActivity
             call.enqueue(this);
         } else if (id == R.id.ir_repostes) {
             fragment=new PieChartFragment();
-        } else if (id == R.id.ir_ayuda) {
+        } /*else if (id == R.id.ir_ayuda) {
             fragment=new AyudaFragment();
 
-        } else if (id == R.id.ir_salir) {
+        }*/ else if (id == R.id.ir_salir) {
             startActivity(new Intent(this,LoginActivity.class));
             Global.clearUsuarioDatosShared(this);
         }

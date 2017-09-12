@@ -12,11 +12,11 @@
 
     <item android:title="Comunicacion">
         <menu>
-            <item android:id="@+id/ir_ayuda" android:icon="@android:drawable/ic_menu_share"
-                android:title="Ayuda" />
-            <item android:id="@+id/ir_salir" android:icon="@drawable/ic_off"
-                android:title="Salir" />
-        </menu>
-    </item>
+            <!-- <item android:id="@+id/ir_ayuda" android:icon="@android:drawable/ic_menu_share"
+                 android:title="Ayuda" />-->
+             <item android:id="@+id/ir_salir" android:icon="@drawable/ic_off"
+                 android:title="Salir" />
+         </menu>
+     </item>
 
-</menu>
+ </menu>

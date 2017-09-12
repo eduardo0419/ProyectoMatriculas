@@ -98,30 +98,34 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
         matri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog labora;
-                AlertDialog.Builder builderla = new AlertDialog.Builder(getContext());
-                builderla.setMessage("La matricula se procedera a guardar esta seguro?")
-                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Matricula matricula=new Matricula();
-                                matricula.setArrayList(cursoSeleccionados);
-                                matricula.setUser(Global.getUsuarioDatosFromShared(getActivity(),"login"));
-                                matricula.setCred(""+(Integer.parseInt(Global.getUsuarioDatosFromShared(getActivity(),"cred_max"))-creditos));
+                if ((Integer.parseInt(Global.getUsuarioDatosFromShared(getActivity(),"cred_max"))-creditos)>=12) {
+                    AlertDialog labora;
+                    AlertDialog.Builder builderla = new AlertDialog.Builder(getContext());
+                    builderla.setMessage("La matricula se procedera a guardar esta seguro?")
+                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Matricula matricula = new Matricula();
+                                    matricula.setArrayList(cursoSeleccionados);
+                                    matricula.setUser(Global.getUsuarioDatosFromShared(getActivity(), "login"));
+                                    matricula.setCred("" + (Integer.parseInt(Global.getUsuarioDatosFromShared(getActivity(), "cred_max")) - creditos));
 
-                                Call<MatriculaResponse> call =MatriculaApiAdapter.getApiService().setMatricula(/*Global.getUsuarioDatosFromShared(getActivity(),"login"),"matri",*/matricula);
-                                call.enqueue(new guardaMatri());
+                                    Call<MatriculaResponse> call = MatriculaApiAdapter.getApiService().setMatricula(/*Global.getUsuarioDatosFromShared(getActivity(),"login"),"matri",*/matricula);
+                                    call.enqueue(new guardaMatri());
 
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener(){
-                            @Override
-                            public void onClick(DialogInterface dialogInterface,int d){
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int d) {
 
-                            }
-                        });
-                labora = builderla.create();
-                labora.show();
+                                }
+                            });
+                    labora = builderla.create();
+                    labora.show();
+                }else{
+                    Toast.makeText(getContext(),"Los creditos a matricular deben ser mayor a 12 creditos",Toast.LENGTH_LONG);
+                }
             }
         });
         return view;
