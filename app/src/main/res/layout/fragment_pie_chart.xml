@@ -1,13 +1,26 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.edudev.proyectomatriculas.ui.fragment.PieChartFragment"
-    android:background="#3D394D">
+    android:background="@color/info">
     <WebView
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_height="400dp"
             android:id="@+id/content">
     </WebView>
-
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/desc"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:clickable="true"
+        app:fabSize="normal"
+        android:background="@color/purple"
+        app:srcCompat="@drawable/ic_cloud_do24dp" />
+</LinearLayout>

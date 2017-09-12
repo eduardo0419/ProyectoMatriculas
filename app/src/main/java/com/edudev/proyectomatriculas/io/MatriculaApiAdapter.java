@@ -17,12 +17,12 @@ public class MatriculaApiAdapter {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-        String baseUrl = "http://192.168.8.102/unt02062017/movilMatricula/";
+        String baseUrl = "http://192.168.1.101/unt02062017/movilMatricula/";
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
-                    //.client(httpClient.build()) // <-- using the log level
+                    .client(httpClient.build()) // <-- using the log level
                     .build();
             API_SERVICE = retrofit.create(MatriculaApiService.class);
         }

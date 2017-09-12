@@ -107,6 +107,7 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
                                 Matricula matricula=new Matricula();
                                 matricula.setArrayList(cursoSeleccionados);
                                 matricula.setUser(Global.getUsuarioDatosFromShared(getActivity(),"login"));
+                                matricula.setCred(""+(Integer.parseInt(Global.getUsuarioDatosFromShared(getActivity(),"cred_max"))-creditos));
 
                                 Call<MatriculaResponse> call =MatriculaApiAdapter.getApiService().setMatricula(/*Global.getUsuarioDatosFromShared(getActivity(),"login"),"matri",*/matricula);
                                 call.enqueue(new guardaMatri());
@@ -434,7 +435,7 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
         public void onResponse(Call<MatriculaResponse> call, Response<MatriculaResponse> response) {
             if (response.isSuccessful()){
                 startActivity(new Intent(getContext(), MenuActivity.class));
-                Toast.makeText(getContext(),"Registro Correcto "+response.body().getCount(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"SU MATRICULA DE LOS "+response.body().getCount() +" CURSOS SE HA PROCESADO CORRECTAMENTE ",Toast.LENGTH_LONG).show();
             }
         }
 

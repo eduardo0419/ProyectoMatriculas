@@ -14,8 +14,10 @@ public class Matricula{
     ArrayList<CursoSeleccionado> arrayList;
 
     @SerializedName("user")
-    private
-    String user;
+    private String user;
+
+    @SerializedName("cred")
+    private String cred;
 
     public ArrayList<CursoSeleccionado> getArrayList() {
         return arrayList;
@@ -31,5 +33,13 @@ public class Matricula{
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String getCred() {
+        return cred;
+    }
+
+    public void setCred(String cred) {
+        this.cred = cred;
     }
 }

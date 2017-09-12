@@ -16,18 +16,21 @@ public class CursoSeleccionado {
     private String vez;
     private String docente;
 
-    private String idteoprac="";
-    private String grupoteoprac="";
-    private String horarioteoprac="";
-    private String idteo="";
-    private String grupoteo="";
-    private String horarioteo="";
-    private String idprac="";
-    private String grupoprac="";
-    private String horarioprac="";
-    private String idlab="";
-    private String grupolab="";
-    private String horariolab="";
+    private String idteoprac="null";
+    private String grupoteoprac="null";
+    private String horarioteoprac="null";
+
+    private String idteo="null";
+    private String grupoteo="null";
+    private String horarioteo="null";
+
+    private String idprac="null";
+    private String grupoprac="null";
+    private String horarioprac="null";
+
+    private String idlab="null";
+    private String grupolab="null";
+    private String horariolab="null";
 
     public String getPeriodo() {
         return periodo;

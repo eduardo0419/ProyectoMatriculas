@@ -7,7 +7,7 @@
         <item android:id="@+id/ir_matricula" android:icon="@android:drawable/ic_menu_manage"
             android:title="Matricular"/>
         <item android:id="@+id/ir_repostes" android:icon="@android:drawable/ic_menu_recent_history"
-            android:title="Reportes" />
+            android:title="Ficha de Matricula" />
     </group>
 
     <item android:title="Comunicacion">
