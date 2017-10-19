@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.edudev.proyectomatriculas.Global;
 import com.edudev.proyectomatriculas.R;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class PieChartFragment  extends Fragment{
         conte.getSettings().setBuiltInZoomControls(true);
 
         //conte.setWebViewClient(new WebViewClient());
-        conte.loadUrl("https://docs.google.com/viewer?url=http://www.uap.edu.pe/Esp/ProgramacionAcademica/Pregrado/03/syllabus/030203218.pdf");
+        conte.loadUrl("https://docs.google.com/viewer?url=http://192.168.1.101/unt02062017/modules/html2pdf/matri_ordePagoExterno.php?task=cargarFicha&idalumno="+Global.getUsuarioDatosFromShared(getActivity(),"login")+"&alumno="+Global.getUsuarioDatosFromShared(getActivity(),"per_paterno")+" "+Global.getUsuarioDatosFromShared(getActivity(),"per_materno")+", "+Global.getUsuarioDatosFromShared(getActivity(),"per_nombres")+"&per="+Global.getUsuarioDatosFromShared(getActivity(),"idPeriodo")+"&secc=" +Global.getUsuarioDatosFromShared(getActivity(),"seccion"));
         //conte.loadUrl("http://www.google.com.pe");
 
         flo=(FloatingActionButton)view.findViewById(R.id.desc);
@@ -63,7 +64,7 @@ public class PieChartFragment  extends Fragment{
             @Override
             public void onClick(View v) {
                 downloadManager=(DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                Uri uri=Uri.parse("http://www.uap.edu.pe/Esp/ProgramacionAcademica/Pregrado/03/syllabus/030203218.pdf");
+                Uri uri=Uri.parse("http://192.168.1.101/unt02062017/modules/html2pdf/matri_ordePagoExterno.php?task=cargarFicha&idalumno="+Global.getUsuarioDatosFromShared(getActivity(),"login")+"&alumno="+Global.getUsuarioDatosFromShared(getActivity(),"per_paterno")+" "+Global.getUsuarioDatosFromShared(getActivity(),"per_materno")+", "+Global.getUsuarioDatosFromShared(getActivity(),"per_nombres")+"&per="+Global.getUsuarioDatosFromShared(getActivity(),"idPeriodo")+"&secc=" +Global.getUsuarioDatosFromShared(getActivity(),"seccion"));
                 DownloadManager.Request request=new DownloadManager.Request(uri);
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 Long reference=downloadManager.enqueue(request);

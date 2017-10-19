@@ -6,14 +6,14 @@
             android:title="Principal" />
         <item android:id="@+id/ir_matricula" android:icon="@android:drawable/ic_menu_manage"
             android:title="Matricular"/>
-        <item android:id="@+id/ir_repostes" android:icon="@android:drawable/ic_menu_recent_history"
-            android:title="Ficha de Matricula" />
-    </group>
+    <!--<item android:id="@+id/ir_repostes" android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Orden de Pago" />-->
+</group>
 
-    <item android:title="Comunicacion">
-        <menu>
-            <!-- <item android:id="@+id/ir_ayuda" android:icon="@android:drawable/ic_menu_share"
-                 android:title="Ayuda" />-->
+<item android:title="Comunicacion">
+    <menu>
+        <!-- <item android:id="@+id/ir_ayuda" android:icon="@android:drawable/ic_menu_share"
+             android:title="Ayuda" />-->
              <item android:id="@+id/ir_salir" android:icon="@drawable/ic_off"
                  android:title="Salir" />
          </menu>

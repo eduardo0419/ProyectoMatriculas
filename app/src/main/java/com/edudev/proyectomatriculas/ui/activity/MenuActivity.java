@@ -85,9 +85,9 @@ public class MenuActivity extends AppCompatActivity
 
             Call<ArrayList<VerificaResponse>> call= MatriculaApiAdapter.getApiService().verifi(Global.getUsuarioDatosFromShared(this,"login"),"verifica");
             call.enqueue(this);
-        } else if (id == R.id.ir_repostes) {
+        } /*else if (id == R.id.ir_repostes) {
             fragment=new PieChartFragment();
-        } /*else if (id == R.id.ir_ayuda) {
+        } else if (id == R.id.ir_ayuda) {
             fragment=new AyudaFragment();
 
         }*/ else if (id == R.id.ir_salir) {

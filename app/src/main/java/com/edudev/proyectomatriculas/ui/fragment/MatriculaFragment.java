@@ -71,6 +71,8 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
     int creditos,aux;
 
     ArrayList<String> CursosSelecc=new ArrayList<String>();
+    ArrayList<String> CursosTercera=new ArrayList<String>();
+    ArrayList<String> CursosCuarta=new ArrayList<String>();
     ArrayList<CursoSeleccionado> cursoSeleccionados=new ArrayList<CursoSeleccionado>();
     CursoSeleccionado cursoSeleccionado;
 
@@ -98,7 +100,6 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
         matri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((Integer.parseInt(Global.getUsuarioDatosFromShared(getActivity(),"cred_max"))-creditos)>=12) {
                     AlertDialog labora;
                     AlertDialog.Builder builderla = new AlertDialog.Builder(getContext());
                     builderla.setMessage("La matricula se procedera a guardar esta seguro?")
@@ -123,9 +124,6 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
                             });
                     labora = builderla.create();
                     labora.show();
-                }else{
-                    Toast.makeText(getContext(),"Los creditos a matricular deben ser mayor a 12 creditos",Toast.LENGTH_LONG);
-                }
             }
         });
         return view;
@@ -167,9 +165,11 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
                     break;
                 case "3":
                     fila.setBackgroundColor(Color.YELLOW);
+                    CursosTercera.add(listarCurso.get(i).getCodigocurso());
                     break;
                 case "4":
                     fila.setBackgroundColor(Color.RED);
+                    CursosCuarta.add(listarCurso.get(i).getCodigocurso());
                     break;
             }
 
@@ -298,30 +298,91 @@ public class MatriculaFragment extends Fragment implements Callback<ListarRespon
                     labora.show();
 
             }else {
-                if (creditos>=Integer.parseInt(credito.getText().toString())) {
-                    progressDialog1 = ProgressDialog.show(getContext(), "", "Cargando horarios..");
-                    progressDialog1.setCancelable(false);
+                if (CursosTercera.size() > 0 || CursosCuarta.size() > 0) {
+                    if (CursosTercera.size()>0) {
+                        if (CursosTercera.contains(codigo.getText().toString())) {
+                            progressDialog1 = ProgressDialog.show(getContext(), "", "Cargando horarios..");
+                            progressDialog1.setCancelable(false);
 
-                    Call<HorariosResponse> call = MatriculaApiAdapter.getApiService().getHorarios(Global.getUsuarioDatosFromShared(getActivity(), "login"), Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"), listarCurso.get(index - 1).getidcursoprog(), "horarios");
-                    call.enqueue(new cargaHorarios());
+                            Call<HorariosResponse> call = MatriculaApiAdapter.getApiService().getHorarios(Global.getUsuarioDatosFromShared(getActivity(), "login"), Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"), listarCurso.get(index - 1).getidcursoprog(), "horarios");
+                            call.enqueue(new cargaHorarios());
 
-                    cursoSeleccionado =new CursoSeleccionado();
+                            cursoSeleccionado = new CursoSeleccionado();
 
-                    cursoSeleccionado.setPeriodo(Global.getUsuarioDatosFromShared(getActivity(),"idPeriodo"));
-                    cursoSeleccionado.setIdcursoprog(listarCurso.get(index-1).getidcursoprog());
-                    cursoSeleccionado.setIdcurso(listarCurso.get(index-1).getCodigocurso());
-                    cursoSeleccionado.setCurso(listarCurso.get(index-1).getCurso());
-                    cursoSeleccionado.setTipocurso(listarCurso.get(index-1).getTipocurso());
-                    cursoSeleccionado.setSeccion(listarCurso.get(index-1).getSeccion());
-                    cursoSeleccionado.setCiclo(listarCurso.get(index-1).getCiclo());
-                    cursoSeleccionado.setCreditos(listarCurso.get(index-1).getCreditos());
-                    cursoSeleccionado.setVez(listarCurso.get(index-1).getVez());
+                            cursoSeleccionado.setPeriodo(Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"));
+                            cursoSeleccionado.setIdcursoprog(listarCurso.get(index - 1).getidcursoprog());
+                            cursoSeleccionado.setIdcurso(listarCurso.get(index - 1).getCodigocurso());
+                            cursoSeleccionado.setCurso(listarCurso.get(index - 1).getCurso());
+                            cursoSeleccionado.setTipocurso(listarCurso.get(index - 1).getTipocurso());
+                            cursoSeleccionado.setSeccion(listarCurso.get(index - 1).getSeccion());
+                            cursoSeleccionado.setCiclo(listarCurso.get(index - 1).getCiclo());
+                            cursoSeleccionado.setCreditos(listarCurso.get(index - 1).getCreditos());
+                            cursoSeleccionado.setVez(listarCurso.get(index - 1).getVez());
 
-                    row.setBackgroundColor(Color.GREEN);
-                    creditos = creditos - Integer.parseInt(credito.getText().toString());
-                    CursosSelecc.add(codigo.getText().toString());
-                }else{
-                    Toast.makeText(getContext(),"Ya no tiene creditos disponibles :(",Toast.LENGTH_LONG).show();
+                            row.setBackgroundColor(Color.GREEN);
+                            creditos = creditos - Integer.parseInt(credito.getText().toString());
+                            CursosSelecc.add(codigo.getText().toString());
+
+                            CursosTercera.remove(codigo.getText().toString());
+                        } else {
+                            Toast.makeText(getContext(), "Debe seleccionar el Curso por Tercera", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    if (CursosCuarta.size()>0) {
+                        if (CursosCuarta.contains(codigo.getText().toString())) {
+                            progressDialog1 = ProgressDialog.show(getContext(), "", "Cargando horarios..");
+                            progressDialog1.setCancelable(false);
+
+                            Call<HorariosResponse> call = MatriculaApiAdapter.getApiService().getHorarios(Global.getUsuarioDatosFromShared(getActivity(), "login"), Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"), listarCurso.get(index - 1).getidcursoprog(), "horarios");
+                            call.enqueue(new cargaHorarios());
+
+                            cursoSeleccionado = new CursoSeleccionado();
+
+                            cursoSeleccionado.setPeriodo(Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"));
+                            cursoSeleccionado.setIdcursoprog(listarCurso.get(index - 1).getidcursoprog());
+                            cursoSeleccionado.setIdcurso(listarCurso.get(index - 1).getCodigocurso());
+                            cursoSeleccionado.setCurso(listarCurso.get(index - 1).getCurso());
+                            cursoSeleccionado.setTipocurso(listarCurso.get(index - 1).getTipocurso());
+                            cursoSeleccionado.setSeccion(listarCurso.get(index - 1).getSeccion());
+                            cursoSeleccionado.setCiclo(listarCurso.get(index - 1).getCiclo());
+                            cursoSeleccionado.setCreditos(listarCurso.get(index - 1).getCreditos());
+                            cursoSeleccionado.setVez(listarCurso.get(index - 1).getVez());
+
+                            row.setBackgroundColor(Color.GREEN);
+                            creditos = creditos - Integer.parseInt(credito.getText().toString());
+                            CursosSelecc.add(codigo.getText().toString());
+
+                            CursosCuarta.remove(codigo.getText().toString());
+                        } else {
+                            Toast.makeText(getContext(), "Debe seleccionar el Curso por Cuarta", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                } else {
+                    if (creditos >= Integer.parseInt(credito.getText().toString())) {
+                        progressDialog1 = ProgressDialog.show(getContext(), "", "Cargando horarios..");
+                        progressDialog1.setCancelable(false);
+
+                        Call<HorariosResponse> call = MatriculaApiAdapter.getApiService().getHorarios(Global.getUsuarioDatosFromShared(getActivity(), "login"), Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"), listarCurso.get(index - 1).getidcursoprog(), "horarios");
+                        call.enqueue(new cargaHorarios());
+
+                        cursoSeleccionado = new CursoSeleccionado();
+
+                        cursoSeleccionado.setPeriodo(Global.getUsuarioDatosFromShared(getActivity(), "idPeriodo"));
+                        cursoSeleccionado.setIdcursoprog(listarCurso.get(index - 1).getidcursoprog());
+                        cursoSeleccionado.setIdcurso(listarCurso.get(index - 1).getCodigocurso());
+                        cursoSeleccionado.setCurso(listarCurso.get(index - 1).getCurso());
+                        cursoSeleccionado.setTipocurso(listarCurso.get(index - 1).getTipocurso());
+                        cursoSeleccionado.setSeccion(listarCurso.get(index - 1).getSeccion());
+                        cursoSeleccionado.setCiclo(listarCurso.get(index - 1).getCiclo());
+                        cursoSeleccionado.setCreditos(listarCurso.get(index - 1).getCreditos());
+                        cursoSeleccionado.setVez(listarCurso.get(index - 1).getVez());
+
+                        row.setBackgroundColor(Color.GREEN);
+                        creditos = creditos - Integer.parseInt(credito.getText().toString());
+                        CursosSelecc.add(codigo.getText().toString());
+                    } else {
+                        Toast.makeText(getContext(), "Ya no tiene creditos disponibles :(", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         }
